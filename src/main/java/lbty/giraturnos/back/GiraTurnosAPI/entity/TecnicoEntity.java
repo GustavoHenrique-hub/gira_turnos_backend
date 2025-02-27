@@ -1,9 +1,13 @@
 package lbty.giraturnos.back.GiraTurnosAPI.entity;
 
-import jakarta.annotation.Nullable;
+//PACKAGES
+import lbty.giraturnos.back.GiraTurnosAPI.dto.TecnicoDTO;
+
+//LIBS
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.*;
 import lombok.*;
+import org.springframework.beans.BeanUtils;
 
 @Entity
 @Table(name = "tecnico")
@@ -20,4 +24,20 @@ public class TecnicoEntity {
     @NotBlank
     @Column(nullable = false)
     private String nome;
+
+    @NotBlank
+    @Column(nullable = false)
+    private String email;
+
+    @PrePersist
+    @PreUpdate
+    public void prePersistAndUpdate(){
+        if (this.nome != null){
+            this.nome = this.nome.toUpperCase();
+        }
+    }
+
+    public TecnicoEntity(TecnicoDTO tecnicoDTO){
+        BeanUtils.copyProperties(tecnicoDTO, this);
+    }
 }
