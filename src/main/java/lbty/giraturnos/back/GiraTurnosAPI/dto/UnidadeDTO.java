@@ -11,7 +11,7 @@ public class UnidadeDTO {
 
     private Long id;
 
-    private String nomeUnidade;
+    private String nome;
 
     private String emailUnidade;
 

@@ -16,12 +16,13 @@ public class VisitaDTO {
     private TecnicoDTO tecnico;
     private UnidadeDTO unidade;
     private ObjetivoDaVisitaDTO objetivoDaVisita;
-    private TurnoEntity turno;
+    private TurnoDTO turno;
+    private UsuarioDTO resposavelRegistro;
+
     private Date dataDaVisita;
     private String horarioInicioVisita;
     private String horarioFimVisita;
     private String dataHoraRegistro;
-    private UsuarioDTO resposavelRegistro;
 
     public VisitaDTO (VisitaEntity visitaEntity){
         BeanUtils.copyProperties(visitaEntity, this);
