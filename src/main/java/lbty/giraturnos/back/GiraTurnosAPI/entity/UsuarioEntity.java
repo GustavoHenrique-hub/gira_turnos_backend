@@ -23,13 +23,25 @@ public class UsuarioEntity {
 
     @NotBlank
     @Column(nullable = false)
+    private String nome;
+
+    @NotBlank
+    @Column(nullable = false)
     private String email;
 
     @NotBlank
     @Column(nullable = false)
     private String senha;
 
-    public UsuarioEntity (UsuarioDTO usuarioDTO){
+    @PrePersist
+    @PreUpdate
+    public void prePersistAndUpdate(){
+        if (this.nome != null){
+            this.nome = this.nome.toUpperCase();
+        }
+    }
+
+    public UsuarioEntity(UsuarioDTO usuarioDTO){
         BeanUtils.copyProperties(usuarioDTO, this);
     }
 }

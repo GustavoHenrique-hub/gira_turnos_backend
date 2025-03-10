@@ -23,7 +23,7 @@ public class UnidadeEntity {
 
     @NotBlank
     @Column(nullable = false)
-    private String nomeUnidade;
+    private String nome;
 
     @NotBlank
     @Column(nullable = false)
@@ -31,9 +31,10 @@ public class UnidadeEntity {
 
     @PrePersist
     @PreUpdate
-    public void PrepersistAndUpdate(){
-        if (this.nomeUnidade != null){
-            this.nomeUnidade.toUpperCase();
+
+    public void prePersistAndUpdate(){
+        if (this.nome != null){
+            this.nome = this.nome.toUpperCase();
         }
     }
 

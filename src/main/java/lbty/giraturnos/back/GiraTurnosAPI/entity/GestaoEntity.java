@@ -29,11 +29,11 @@ public class GestaoEntity {
     @Column (nullable = false)
     private String cargo;
 
-    @NotBlank
-    @Column (nullable = false)
-    private String telefone;
-
     private String email;
+
+    @NotBlank
+    @Column(nullable = false)
+    private String telefone;
 
     @PrePersist
     @PreUpdate
