@@ -1,4 +1,7 @@
 package lbty.giraturnos.back.GiraTurnosAPI.repository;
 
-public interface GestaoRepository {
+import lbty.giraturnos.back.GiraTurnosAPI.entity.GestaoEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface GestaoRepository extends JpaRepository<GestaoEntity, Long> {
 }
