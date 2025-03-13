@@ -25,7 +25,7 @@ public class TecnicoService {
         return tecnico.stream().map(TecnicoDTO::new).toList();
     }
 
-    public ResponseEntity<Map<String, String>> addNewTecnico(TecnicoDTO tecnicoDTO){
+    public ResponseEntity<Map<String, String>> insertTecnico(TecnicoDTO tecnicoDTO){
         TecnicoEntity tecnicoEntity = new TecnicoEntity(tecnicoDTO);
         Map<String, String> response = new HashMap<>();
         try{
@@ -62,7 +62,7 @@ public class TecnicoService {
         }
     }
 
-    public ResponseEntity<Map<String, String>> deleteTécnico(Long id){
+    public ResponseEntity<Map<String, String>> deleteTecnico(Long id){
         TecnicoEntity tecnicoEntity = tecnicoRepository.findById(id).get();
         Map<String, String> response = new HashMap<>();
 
