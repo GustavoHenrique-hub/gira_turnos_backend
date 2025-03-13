@@ -7,7 +7,7 @@ import lombok.*;
 import org.springframework.beans.BeanUtils;
 
 @Entity
-@Table(name = "visita")
+@Table(name = "gestao_por_unidade")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,7 +19,7 @@ public class GestaoPorUnidadeEntity {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_tecnico", nullable = false)
+    @JoinColumn(name = "id_gestao", nullable = false)
     private GestaoEntity gestao;
 
     @ManyToOne

@@ -31,8 +31,6 @@ public class GestaoEntity {
 
     private String email;
 
-    @NotBlank
-    @Column(nullable = false)
     private String telefone;
 
     @PrePersist
