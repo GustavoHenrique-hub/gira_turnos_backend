@@ -24,8 +24,8 @@ public class TecnicoController {
     }
 
     @PostMapping("/newTecnico")
-    public ResponseEntity<Map<String, String>> addNewTecnico(@Valid @RequestBody TecnicoDTO tecnicoDTO){
-        return tecnicoService.addNewTecnico(tecnicoDTO);
+    public ResponseEntity<Map<String, String>> insertTecnico(@Valid @RequestBody TecnicoDTO tecnicoDTO){
+        return tecnicoService.insertTecnico(tecnicoDTO);
     }
 
     @PutMapping("/updateTecnico/{id}")
@@ -35,6 +35,6 @@ public class TecnicoController {
 
     @DeleteMapping("/deleteTecnico/{id}")
     public ResponseEntity<Map<String, String>> deleteTecnico(@PathVariable Long id){
-        return tecnicoService.deleteTécnico(id);
+        return tecnicoService.deleteTecnico(id);
     }
 }
