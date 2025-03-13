@@ -1,5 +1,6 @@
 package lbty.giraturnos.back.GiraTurnosAPI.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lbty.giraturnos.back.GiraTurnosAPI.entity.TurnoEntity;
 import lombok.*;
 import org.springframework.beans.*;
@@ -10,6 +11,8 @@ import org.springframework.beans.*;
 public class TurnoDTO {
 
     private Long id;
+
+    @NotBlank(message = "O campo 'Turno' não pode ser vazio ou nulo!")
     private Long turno;
 
     public TurnoDTO (TurnoEntity turnoEntity){

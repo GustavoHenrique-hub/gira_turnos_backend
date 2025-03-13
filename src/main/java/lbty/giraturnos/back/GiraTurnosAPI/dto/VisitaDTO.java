@@ -1,5 +1,6 @@
 package lbty.giraturnos.back.GiraTurnosAPI.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lbty.giraturnos.back.GiraTurnosAPI.entity.*;
 
 import lombok.*;
@@ -13,15 +14,30 @@ import java.util.Date;
 public class VisitaDTO {
 
     private Long id;
+
+    @NotBlank(message = "O campo 'Tecnico' não pode ser vazio ou nulo!")
     private TecnicoDTO tecnico;
+
+    @NotBlank(message = "O campo 'Unidade' não pode ser vazio ou nulo!")
     private UnidadeDTO unidade;
+
+    @NotBlank(message = "O campo 'Objetivo da Visita' não pode ser vazio ou nulo!")
     private ObjetivoDaVisitaDTO objetivoDaVisita;
+
+    @NotBlank(message = "O campo 'Turno' não pode ser vazio ou nulo!")
     private TurnoDTO turno;
+
     private UsuarioDTO resposavelRegistro;
 
+    @NotBlank(message = "O campo 'Data da Visita' não pode ser vazio ou nulo!")
     private Date dataDaVisita;
+
+    @NotBlank(message = "O campo 'Horário início da Visita' não pode ser vazio ou nulo!")
     private String horarioInicioVisita;
+
+    @NotBlank(message = "O campo 'Horário fim da Visita' não pode ser vazio ou nulo!")
     private String horarioFimVisita;
+
     private String dataHoraRegistro;
 
     public VisitaDTO (VisitaEntity visitaEntity){

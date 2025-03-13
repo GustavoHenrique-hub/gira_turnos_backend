@@ -1,5 +1,6 @@
 package lbty.giraturnos.back.GiraTurnosAPI.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lbty.giraturnos.back.GiraTurnosAPI.entity.GestaoPorUnidadeEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,11 @@ import org.springframework.beans.BeanUtils;
 public class GestaoPorUnidadeDTO {
 
     private Long id;
+
+    @NotBlank(message = "O campo 'Gestao' não pode ser vazio ou nulo!")
     private GestaoDTO gestao;
+
+    @NotBlank(message = "O campo 'Unidade' não pode ser vazio ou nulo!")
     private UnidadeDTO unidade;
 
     public GestaoPorUnidadeDTO (GestaoPorUnidadeEntity gestaoPorUnidadeEntity){
