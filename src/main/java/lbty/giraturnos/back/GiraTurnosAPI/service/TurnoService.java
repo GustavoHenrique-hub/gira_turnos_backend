@@ -1,6 +1,6 @@
 package lbty.giraturnos.back.GiraTurnosAPI.service;
 
-import lbty.giraturnos.back.GiraTurnosAPI.dto.TurnoDTO;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.TurnoDTO;
 import lbty.giraturnos.back.GiraTurnosAPI.entity.TurnoEntity;
 import lbty.giraturnos.back.GiraTurnosAPI.repository.TurnoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

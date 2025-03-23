@@ -1,4 +1,4 @@
-package lbty.giraturnos.back.GiraTurnosAPI.dto;
+package lbty.giraturnos.back.GiraTurnosAPI.infra.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import lbty.giraturnos.back.GiraTurnosAPI.entity.*;

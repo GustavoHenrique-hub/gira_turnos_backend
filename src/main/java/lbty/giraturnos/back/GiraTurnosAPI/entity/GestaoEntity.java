@@ -1,7 +1,7 @@
 package lbty.giraturnos.back.GiraTurnosAPI.entity;
 
 //PACKAGES
-import lbty.giraturnos.back.GiraTurnosAPI.dto.GestaoDTO;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.GestaoDTO;
 
 //LIBS
 import jakarta.persistence.*;

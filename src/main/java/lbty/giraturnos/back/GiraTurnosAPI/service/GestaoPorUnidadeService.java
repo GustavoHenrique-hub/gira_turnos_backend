@@ -1,6 +1,6 @@
 package lbty.giraturnos.back.GiraTurnosAPI.service;
 
-import lbty.giraturnos.back.GiraTurnosAPI.dto.GestaoPorUnidadeDTO;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.GestaoPorUnidadeDTO;
 import lbty.giraturnos.back.GiraTurnosAPI.entity.GestaoEntity;
 import lbty.giraturnos.back.GiraTurnosAPI.entity.GestaoPorUnidadeEntity;
 import lbty.giraturnos.back.GiraTurnosAPI.entity.UnidadeEntity;

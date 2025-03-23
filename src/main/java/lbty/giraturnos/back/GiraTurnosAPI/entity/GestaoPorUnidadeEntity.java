@@ -1,8 +1,7 @@
 package lbty.giraturnos.back.GiraTurnosAPI.entity;
 
 import jakarta.persistence.*;
-import lbty.giraturnos.back.GiraTurnosAPI.dto.GestaoPorUnidadeDTO;
-import lbty.giraturnos.back.GiraTurnosAPI.dto.VisitaDTO;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.GestaoPorUnidadeDTO;
 import lombok.*;
 import org.springframework.beans.BeanUtils;
 

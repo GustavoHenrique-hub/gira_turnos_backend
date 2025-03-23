@@ -1,7 +1,7 @@
 package lbty.giraturnos.back.GiraTurnosAPI.controller;
 
 import jakarta.validation.Valid;
-import lbty.giraturnos.back.GiraTurnosAPI.dto.UsuarioDTO;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.UsuarioDTO;
 import lbty.giraturnos.back.GiraTurnosAPI.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,6 @@
 package lbty.giraturnos.back.GiraTurnosAPI.service;
 
-import lbty.giraturnos.back.GiraTurnosAPI.dto.LocalizacaoDTO;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.LocalizacaoDTO;
 import lbty.giraturnos.back.GiraTurnosAPI.entity.LocalizacaoEntity;
 import lbty.giraturnos.back.GiraTurnosAPI.repository.LocalizacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package lbty.giraturnos.back.GiraTurnosAPI.service;
 
-import lbty.giraturnos.back.GiraTurnosAPI.dto.ObjetivoDaVisitaDTO;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.ObjetivoDaVisitaDTO;
 import lbty.giraturnos.back.GiraTurnosAPI.entity.ObjetivoDaVisitaEntity;
 import lbty.giraturnos.back.GiraTurnosAPI.repository.ObjetivoDaVisitaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
