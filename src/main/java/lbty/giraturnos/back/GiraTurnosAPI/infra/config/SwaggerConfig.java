@@ -1,4 +1,4 @@
-package lbty.giraturnos.back.GiraTurnosAPI.config;
+package lbty.giraturnos.back.GiraTurnosAPI.infra.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
