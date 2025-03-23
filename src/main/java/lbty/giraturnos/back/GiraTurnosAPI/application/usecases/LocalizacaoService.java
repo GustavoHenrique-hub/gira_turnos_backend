@@ -1,7 +1,7 @@
 package lbty.giraturnos.back.GiraTurnosAPI.application.usecases;
 
 import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.LocalizacaoDTO;
-import lbty.giraturnos.back.GiraTurnosAPI.entity.LocalizacaoEntity;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity.LocalizacaoEntity;
 import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.repository.LocalizacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

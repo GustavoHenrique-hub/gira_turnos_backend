@@ -1,21 +1,21 @@
-package lbty.giraturnos.back.GiraTurnosAPI.entity;
+package lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity;
 
 //PACKAGES
-import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.TecnicoDTO;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.UsuarioDTO;
 
 //LIBS
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
-import org.springframework.beans.BeanUtils;
+import org.springframework.beans.*;
 
 @Entity
-@Table(name = "tecnico")
+@Table(name = "usuario")
 @Getter
 @Setter
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class TecnicoEntity {
+public class UsuarioEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +29,10 @@ public class TecnicoEntity {
     @Column(nullable = false)
     private String email;
 
+    @NotBlank
+    @Column(nullable = false)
+    private String senha;
+
     @PrePersist
     @PreUpdate
     public void prePersistAndUpdate(){
@@ -37,7 +41,7 @@ public class TecnicoEntity {
         }
     }
 
-    public TecnicoEntity(TecnicoDTO tecnicoDTO){
-        BeanUtils.copyProperties(tecnicoDTO, this);
+    public UsuarioEntity(UsuarioDTO usuarioDTO){
+        BeanUtils.copyProperties(usuarioDTO, this);
     }
 }

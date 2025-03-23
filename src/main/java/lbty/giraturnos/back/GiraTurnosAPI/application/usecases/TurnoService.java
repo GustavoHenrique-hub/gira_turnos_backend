@@ -1,7 +1,7 @@
 package lbty.giraturnos.back.GiraTurnosAPI.application.usecases;
 
 import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.TurnoDTO;
-import lbty.giraturnos.back.GiraTurnosAPI.entity.TurnoEntity;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity.TurnoEntity;
 import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.repository.TurnoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

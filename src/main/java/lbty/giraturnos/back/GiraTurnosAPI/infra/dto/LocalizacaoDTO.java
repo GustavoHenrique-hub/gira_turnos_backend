@@ -1,8 +1,7 @@
 package lbty.giraturnos.back.GiraTurnosAPI.infra.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import lbty.giraturnos.back.GiraTurnosAPI.entity.GestaoEntity;
-import lbty.giraturnos.back.GiraTurnosAPI.entity.LocalizacaoEntity;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity.LocalizacaoEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

@@ -1,6 +1,6 @@
 package lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.repository;
 
-import lbty.giraturnos.back.GiraTurnosAPI.entity.UsuarioEntity;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity.UsuarioEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

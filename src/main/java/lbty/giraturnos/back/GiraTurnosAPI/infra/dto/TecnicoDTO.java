@@ -2,7 +2,7 @@ package lbty.giraturnos.back.GiraTurnosAPI.infra.dto;
 
 
 import jakarta.validation.constraints.NotBlank;
-import lbty.giraturnos.back.GiraTurnosAPI.entity.TecnicoEntity;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity.TecnicoEntity;
 import lombok.*;
 import org.springframework.beans.*;
 

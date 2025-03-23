@@ -1,4 +1,4 @@
-package lbty.giraturnos.back.GiraTurnosAPI.entity;
+package lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity;
 
 import jakarta.persistence.*;
 import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.GestaoPorUnidadeDTO;
