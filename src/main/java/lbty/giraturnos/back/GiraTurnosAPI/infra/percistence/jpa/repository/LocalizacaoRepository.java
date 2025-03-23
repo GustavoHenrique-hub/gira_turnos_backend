@@ -1,4 +1,4 @@
-package lbty.giraturnos.back.GiraTurnosAPI.repository;
+package lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.repository;
 
 import lbty.giraturnos.back.GiraTurnosAPI.entity.LocalizacaoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
