@@ -1,4 +1,4 @@
-package lbty.giraturnos.back.GiraTurnosAPI.controller;
+package lbty.giraturnos.back.GiraTurnosAPI.infra.controller;
 
 import jakarta.validation.Valid;
 import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.TurnoDTO;
