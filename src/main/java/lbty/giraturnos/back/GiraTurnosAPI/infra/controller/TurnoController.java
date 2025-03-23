@@ -2,7 +2,7 @@ package lbty.giraturnos.back.GiraTurnosAPI.infra.controller;
 
 import jakarta.validation.Valid;
 import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.TurnoDTO;
-import lbty.giraturnos.back.GiraTurnosAPI.service.TurnoService;
+import lbty.giraturnos.back.GiraTurnosAPI.application.usecases.TurnoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

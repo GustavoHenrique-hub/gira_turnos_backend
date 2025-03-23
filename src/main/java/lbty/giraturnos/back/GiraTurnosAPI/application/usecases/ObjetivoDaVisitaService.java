@@ -1,8 +1,8 @@
-package lbty.giraturnos.back.GiraTurnosAPI.service;
+package lbty.giraturnos.back.GiraTurnosAPI.application.usecases;
 
 import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.ObjetivoDaVisitaDTO;
 import lbty.giraturnos.back.GiraTurnosAPI.entity.ObjetivoDaVisitaEntity;
-import lbty.giraturnos.back.GiraTurnosAPI.repository.ObjetivoDaVisitaRepository;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.repository.ObjetivoDaVisitaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

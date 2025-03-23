@@ -4,7 +4,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.TecnicoDTO;
-import lbty.giraturnos.back.GiraTurnosAPI.service.TecnicoService;
+import lbty.giraturnos.back.GiraTurnosAPI.application.usecases.TecnicoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

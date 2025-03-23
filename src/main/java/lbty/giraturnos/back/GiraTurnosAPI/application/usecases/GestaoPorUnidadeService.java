@@ -1,10 +1,10 @@
-package lbty.giraturnos.back.GiraTurnosAPI.service;
+package lbty.giraturnos.back.GiraTurnosAPI.application.usecases;
 
 import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.GestaoPorUnidadeDTO;
 import lbty.giraturnos.back.GiraTurnosAPI.entity.GestaoEntity;
 import lbty.giraturnos.back.GiraTurnosAPI.entity.GestaoPorUnidadeEntity;
 import lbty.giraturnos.back.GiraTurnosAPI.entity.UnidadeEntity;
-import lbty.giraturnos.back.GiraTurnosAPI.repository.GestaoPorUnidadeRepository;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.repository.GestaoPorUnidadeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

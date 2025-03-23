@@ -1,8 +1,8 @@
-package lbty.giraturnos.back.GiraTurnosAPI.service;
+package lbty.giraturnos.back.GiraTurnosAPI.application.usecases;
 
 import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.TecnicoDTO;
 import lbty.giraturnos.back.GiraTurnosAPI.entity.TecnicoEntity;
-import lbty.giraturnos.back.GiraTurnosAPI.repository.TecnicoRepository;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.repository.TecnicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
