@@ -10,6 +10,7 @@ import java.util.List;
 
 
 public interface VisitaRepository extends JpaRepository<VisitaEntity, Long> {
+
     @Query(value = "SELECT * FROM visita vt " +
             "WHERE (:tecnico IS NULL OR vt.id_tecnico = :tecnico)" +
             "AND (:unidade IS NULL OR vt.id_unidade = :unidade)" +
