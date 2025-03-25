@@ -9,8 +9,6 @@ import jakarta.validation.constraints.*;
 import lombok.*;
 import org.springframework.beans.*;
 
-import java.util.Date;
-
 @Entity
 @Table(name = "visita")
 @Getter
@@ -32,10 +30,6 @@ public class VisitaEntity {
     private UnidadeEntity unidade;
 
     @ManyToOne
-    @JoinColumn(name = "id_objetivo_visita", nullable = false)
-    private ObjetivoDaVisitaEntity objetivoDaVisita;
-
-    @ManyToOne
     @JoinColumn(name = "id_turno", nullable = false)
     private TurnoEntity turno;
 
@@ -45,19 +39,27 @@ public class VisitaEntity {
 
     @NotBlank
     @Column(nullable = false)
-    private Date dataDaVisita;
+    private String dataHoraInicioVisita;
 
     @NotBlank
     @Column(nullable = false)
-    private String horarioInicioVisita;
-
-    @NotBlank
-    @Column(nullable = false)
-    private String horarioFimVisita;
+    private String dataHoraFimVisita;
 
     @NotBlank
     @Column(nullable = false)
     private String dataHoraRegistro;
+
+    @NotBlank
+    @Column(name = "objetivo_visita", nullable = false)
+    private String objetivoDaVisita;
+
+    @PrePersist
+    @PreUpdate
+    public void prePersistAndUpdate(){
+        if (this.objetivoDaVisita != null){
+            this.objetivoDaVisita = this.objetivoDaVisita.toUpperCase();
+        }
+    }
 
     public VisitaEntity (VisitaDTO visitaDTO){
         BeanUtils.copyProperties(visitaDTO, this);
@@ -66,9 +68,6 @@ public class VisitaEntity {
         }
         if(visitaDTO != null && visitaDTO.getUnidade() != null){
             this.unidade = new UnidadeEntity(visitaDTO.getUnidade());
-        }
-        if(visitaDTO != null && visitaDTO.getObjetivoDaVisita() != null){
-            this.objetivoDaVisita = new ObjetivoDaVisitaEntity(visitaDTO.getObjetivoDaVisita());
         }
         if(visitaDTO != null && visitaDTO.getTurno() != null){
             this.turno = new TurnoEntity(visitaDTO.getTurno());

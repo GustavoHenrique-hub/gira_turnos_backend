@@ -25,10 +25,6 @@ public class UnidadeEntity {
     @Column(nullable = false)
     private String nome;
 
-    @NotBlank
-    @Column(nullable = false)
-    private String emailUnidade;
-
     @PrePersist
     @PreUpdate
 

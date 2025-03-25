@@ -22,7 +22,7 @@ public class VisitaDTO {
     private UnidadeDTO unidade;
 
     @NotBlank(message = "O campo 'Objetivo da Visita' não pode ser vazio ou nulo!")
-    private ObjetivoDaVisitaDTO objetivoDaVisita;
+    private String objetivoDaVisita;
 
     @NotBlank(message = "O campo 'Turno' não pode ser vazio ou nulo!")
     private TurnoDTO turno;
@@ -47,9 +47,6 @@ public class VisitaDTO {
         }
         if(visitaEntity != null && visitaEntity.getUnidade() != null){
             this.unidade = new UnidadeDTO(visitaEntity.getUnidade());
-        }
-        if(visitaEntity != null && visitaEntity.getObjetivoDaVisita() != null){
-            this.objetivoDaVisita = new ObjetivoDaVisitaDTO(visitaEntity.getObjetivoDaVisita());
         }
         if(visitaEntity != null && visitaEntity.getTurno() != null){
             this.turno = new TurnoDTO(visitaEntity.getTurno());

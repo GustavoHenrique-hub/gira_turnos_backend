@@ -47,13 +47,12 @@ public class VisitaService {
                 VisitaEntity visitaEntity = visitaEntityOptional.get();
                 visitaEntity.setTecnico(new TecnicoEntity(visitaDTO.getTecnico()));
                 visitaEntity.setUnidade(new UnidadeEntity(visitaDTO.getUnidade()));
-                visitaEntity.setObjetivoDaVisita(new ObjetivoDaVisitaEntity(visitaDTO.getObjetivoDaVisita()));
                 visitaEntity.setTurno(new TurnoEntity(visitaDTO.getTurno()));
                 visitaEntity.setResposavelRegistro(new UsuarioEntity(visitaDTO.getResposavelRegistro()));
-                visitaEntity.setDataDaVisita(visitaDTO.getDataDaVisita());
-                visitaEntity.setHorarioInicioVisita(visitaDTO.getHorarioInicioVisita());
-                visitaEntity.setHorarioFimVisita(visitaDTO.getHorarioFimVisita());
+                visitaEntity.setDataHoraInicioVisita(visitaDTO.getHorarioInicioVisita());
+                visitaEntity.setDataHoraFimVisita(visitaDTO.getHorarioFimVisita());
                 visitaEntity.setDataHoraRegistro(visitaDTO.getDataHoraRegistro());
+                visitaEntity.setObjetivoDaVisita(visitaDTO.getObjetivoDaVisita());
                 visitaRepository.save(visitaEntity);
 
                 response.put("WARN", "Visita alterada com sucesso!");
