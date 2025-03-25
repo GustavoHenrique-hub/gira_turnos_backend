@@ -46,7 +46,6 @@ public class UnidadeService {
             if(unidadeEntityOptional.isPresent()){
                 UnidadeEntity unidadeEntity = unidadeEntityOptional.get();
                 unidadeEntity.setNome(unidadeDTO.getNome());
-                unidadeEntity.setEmailUnidade(unidadeDTO.getEmailUnidade());
                 unidadeRepository.save(unidadeEntity);
 
                 response.put("WARN", "Unidade alterada com sucesso!");

@@ -25,6 +25,7 @@ public class TecnicoController {
     private TecnicoService tecnicoService;
 
 
+
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Lista de Técnicos",
                     content = @Content(mediaType = "application/json",
