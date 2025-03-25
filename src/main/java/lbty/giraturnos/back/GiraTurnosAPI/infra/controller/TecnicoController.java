@@ -1,5 +1,6 @@
 package lbty.giraturnos.back.GiraTurnosAPI.infra.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -9,6 +10,7 @@ import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.TecnicoDTO;
 import lbty.giraturnos.back.GiraTurnosAPI.application.usecases.TecnicoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,7 +24,9 @@ public class TecnicoController {
     @Autowired
     private TecnicoService tecnicoService;
 
+
     @GetMapping("/listAllTecnico")
+    @Operation(summary = "Listar todos os técnicos")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Lista de Técnicos",
                     content = @Content(mediaType = "application/json",
