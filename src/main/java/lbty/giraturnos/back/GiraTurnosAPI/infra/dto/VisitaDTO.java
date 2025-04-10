@@ -3,6 +3,7 @@ package lbty.giraturnos.back.GiraTurnosAPI.infra.dto;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 
+import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity.LocalizacaoEntity;
 import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity.VisitaEntity;
 import lombok.*;
 import org.springframework.beans.*;
@@ -22,6 +23,9 @@ public class VisitaDTO {
     @NotBlank(message = "O campo 'Unidade' não pode ser vazio ou nulo!")
     private UnidadeDTO unidade;
 
+    @NotBlank(message = "O campo 'Localização' não pode ser vazio ou nulo!")
+    private LocalizacaoDTO localizacao;
+    
     @NotBlank(message = "O campo 'Turno' não pode ser vazio ou nulo!")
     private TurnoDTO turno;
 
@@ -32,6 +36,9 @@ public class VisitaDTO {
 
     @NotBlank(message = "O campo 'Data/Hora Fim da Visita' não pode ser vazio ou nulo!")
     private String dataHoraFimVisita;
+
+    @NotBlank(message = "O campo 'Objetivo da Visita' não pode ser vazio ou nulo!")
+    private String objetivoDaVisita;
 
     private String dataHoraRegistro;
 
@@ -48,6 +55,9 @@ public class VisitaDTO {
         }
         if(visitaEntity != null && visitaEntity.getTurno() != null){
             this.turno = new TurnoDTO(visitaEntity.getTurno());
+        }
+        if(visitaEntity != null && visitaEntity.getLocalizacao() != null){
+            this.localizacao = new LocalizacaoDTO(visitaEntity.getLocalizacao());
         }
         if(visitaEntity != null && visitaEntity.getResposavelRegistro() != null){
             this.resposavelRegistro = new UsuarioDTO(visitaEntity.getResposavelRegistro());
