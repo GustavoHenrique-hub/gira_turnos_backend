@@ -1,5 +1,6 @@
 package lbty.giraturnos.back.GiraTurnosAPI.infra.dto;
 
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 
 import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity.VisitaEntity;
@@ -21,24 +22,21 @@ public class VisitaDTO {
     @NotBlank(message = "O campo 'Unidade' não pode ser vazio ou nulo!")
     private UnidadeDTO unidade;
 
-    @NotBlank(message = "O campo 'Objetivo da Visita' não pode ser vazio ou nulo!")
-    private String objetivoDaVisita;
-
     @NotBlank(message = "O campo 'Turno' não pode ser vazio ou nulo!")
     private TurnoDTO turno;
 
     private UsuarioDTO resposavelRegistro;
 
-    @NotBlank(message = "O campo 'Data da Visita' não pode ser vazio ou nulo!")
-    private Date dataDaVisita;
+    @NotBlank(message = "O campo 'Data/Hora Inicio da Visita' não pode ser vazio ou nulo!")
+    private String dataHoraInicioVisita;
 
-    @NotBlank(message = "O campo 'Horário início da Visita' não pode ser vazio ou nulo!")
-    private String horarioInicioVisita;
-
-    @NotBlank(message = "O campo 'Horário fim da Visita' não pode ser vazio ou nulo!")
-    private String horarioFimVisita;
+    @NotBlank(message = "O campo 'Data/Hora Fim da Visita' não pode ser vazio ou nulo!")
+    private String dataHoraFimVisita;
 
     private String dataHoraRegistro;
+
+    @NotBlank(message = "O campo 'Objetivo da Visita' não pode ser vazio ou nulo!")
+    private String objetivoDaVisita;
 
     public VisitaDTO (VisitaEntity visitaEntity){
         BeanUtils.copyProperties(visitaEntity, this);
