@@ -42,9 +42,6 @@ public class VisitaDTO {
 
     private String dataHoraRegistro;
 
-    @NotBlank(message = "O campo 'Objetivo da Visita' não pode ser vazio ou nulo!")
-    private String objetivoDaVisita;
-
     public VisitaDTO (VisitaEntity visitaEntity){
         BeanUtils.copyProperties(visitaEntity, this);
         if(visitaEntity != null && visitaEntity.getTecnico() != null){
