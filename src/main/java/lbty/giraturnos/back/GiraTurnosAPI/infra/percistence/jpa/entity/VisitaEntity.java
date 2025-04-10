@@ -34,6 +34,10 @@ public class VisitaEntity {
     private TurnoEntity turno;
 
     @ManyToOne
+    @JoinColumn(name = "id_localizacao", nullable = false)
+    private LocalizacaoEntity localizacao;
+
+    @ManyToOne
     @JoinColumn(name = "id_usuario", nullable = false)
     private UsuarioEntity resposavelRegistro;
 
@@ -71,6 +75,9 @@ public class VisitaEntity {
         }
         if(visitaDTO != null && visitaDTO.getTurno() != null){
             this.turno = new TurnoEntity(visitaDTO.getTurno());
+        }
+        if(visitaDTO != null && visitaDTO.getLocalizacao() != null){
+            this.localizacao = new LocalizacaoEntity(visitaDTO.getLocalizacao());
         }
         if(visitaDTO != null && visitaDTO.getResposavelRegistro() != null){
             this.resposavelRegistro = new UsuarioEntity(visitaDTO.getResposavelRegistro());
