@@ -49,8 +49,8 @@ public class VisitaService {
                 visitaEntity.setUnidade(new UnidadeEntity(visitaDTO.getUnidade()));
                 visitaEntity.setTurno(new TurnoEntity(visitaDTO.getTurno()));
                 visitaEntity.setResposavelRegistro(new UsuarioEntity(visitaDTO.getResposavelRegistro()));
-                visitaEntity.setDataHoraInicioVisita(visitaDTO.getHorarioInicioVisita());
-                visitaEntity.setDataHoraFimVisita(visitaDTO.getHorarioFimVisita());
+                visitaEntity.setDataHoraInicioVisita(visitaDTO.getDataHoraInicioVisita());
+                visitaEntity.setDataHoraFimVisita(visitaDTO.getDataHoraFimVisita());
                 visitaEntity.setDataHoraRegistro(visitaDTO.getDataHoraRegistro());
                 visitaEntity.setObjetivoDaVisita(visitaDTO.getObjetivoDaVisita());
                 visitaRepository.save(visitaEntity);
