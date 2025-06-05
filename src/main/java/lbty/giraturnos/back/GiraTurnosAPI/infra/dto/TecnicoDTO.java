@@ -12,7 +12,7 @@ import org.springframework.beans.*;
 @Setter
 @NoArgsConstructor
 public class TecnicoDTO {
-    
+
     @NotBlank(message = "O campo 'Nome' não pode ser vazio ou nulo!")
     @Schema(description = "Nome do técnico", example = "Gustavo Silva")
     private String nome;

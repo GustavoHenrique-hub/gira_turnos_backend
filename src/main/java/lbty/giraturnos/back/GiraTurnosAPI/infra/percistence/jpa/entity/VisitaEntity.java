@@ -41,6 +41,10 @@ public class VisitaEntity {
     @JoinColumn(name = "id_usuario", nullable = false)
     private UsuarioEntity resposavelRegistro;
 
+    @ManyToOne
+    @JoinColumn(name = "id_escala", nullable = false)
+    private EscalaEntity escala;
+
     @NotBlank
     @Column(nullable = false)
     private String dataHoraInicioVisita;
@@ -56,6 +60,9 @@ public class VisitaEntity {
     @NotBlank
     @Column(name = "objetivo_visita", nullable = false)
     private String objetivoDaVisita;
+
+    @Column
+    private String numCard;
 
     @PrePersist
     @PreUpdate
@@ -81,6 +88,9 @@ public class VisitaEntity {
         }
         if(visitaDTO != null && visitaDTO.getResposavelRegistro() != null){
             this.resposavelRegistro = new UsuarioEntity(visitaDTO.getResposavelRegistro());
+        }
+        if(visitaDTO != null && visitaDTO.getEscala() != null){
+            this.escala = new EscalaEntity(visitaDTO.getEscala());
         }
     }
 

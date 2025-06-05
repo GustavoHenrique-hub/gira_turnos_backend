@@ -1,14 +1,10 @@
 package lbty.giraturnos.back.GiraTurnosAPI.infra.dto;
 
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 
-import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity.LocalizacaoEntity;
 import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity.VisitaEntity;
 import lombok.*;
 import org.springframework.beans.*;
-
-import java.util.Date;
 
 @Getter
 @Setter
@@ -28,6 +24,9 @@ public class VisitaDTO {
     
     @NotBlank(message = "O campo 'Turno' não pode ser vazio ou nulo!")
     private TurnoDTO turno;
+
+    @NotBlank(message = "O campo 'Escala' não pode ser vazio ou nulo!")
+    private EscalaDTO escala;
 
     private UsuarioDTO resposavelRegistro;
 
@@ -58,6 +57,9 @@ public class VisitaDTO {
         }
         if(visitaEntity != null && visitaEntity.getResposavelRegistro() != null){
             this.resposavelRegistro = new UsuarioDTO(visitaEntity.getResposavelRegistro());
+        }
+        if(visitaEntity != null && visitaEntity.getEscala() != null){
+            this.escala = new EscalaDTO(visitaEntity.getEscala());
         }
     }
 }
