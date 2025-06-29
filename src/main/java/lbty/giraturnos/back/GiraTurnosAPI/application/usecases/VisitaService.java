@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.UnexpectedRollbackException;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
@@ -56,7 +57,7 @@ public class VisitaService {
      * Insere uma nova visita, garantindo que as referências ManyToOne
      * sejam entidades gerenciadas pelo JPA.
      */
-
+    @Transactional
     public ResponseEntity<Map<String, String>> insertVisita(VisitaDTO dto) {
         Map<String, String> response = new HashMap<>();
         try {
@@ -114,6 +115,7 @@ public class VisitaService {
     /**
      * Atualiza uma visita existente, recarregando referências gerenciadas.
      */
+    @Transactional
     public ResponseEntity<Map<String, String>> updateVisita(VisitaDTO dto, Long id) {
         Map<String, String> response = new HashMap<>();
         Optional<VisitaEntity> opt = visitaRepository.findById(id);
@@ -154,6 +156,7 @@ public class VisitaService {
     /**
      * Deleta a visita pelo ID.
      */
+    @Transactional
     public ResponseEntity<Map<String, String>> deleteVisita(Long id) {
         Map<String, String> response = new HashMap<>();
         Optional<VisitaEntity> opt = visitaRepository.findById(id);
