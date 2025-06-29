@@ -2,6 +2,7 @@ package lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.repository;
 
 import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity.VisitaEntity;
 
+import lbty.giraturnos.back.GiraTurnosAPI.infra.projection.VisitaSummary;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -31,6 +32,16 @@ public interface VisitaRepository extends JpaRepository<VisitaEntity, Long> {
             @Param("horariofimvisita") String horariofimvisita
     );
 
-    @Query(value = "SELECT * FROM visita VISITA WHERE VISITA.dataHoraInicioVisita BETWEEN :inicio AND :fim", nativeQuery = true)
-    List<VisitaEntity> visitaPaginator(@Param("inicio") String inicio, @Param("fim") String fim);
+    @Query("""
+        SELECT
+          VISITA.id                       AS id,
+          VISITA.unidade.nome             AS unidadeNome,
+          VISITA.tecnico.nome             AS tecnicoNome,
+          VISITA.dataHoraInicioVisita     AS dataHoraInicioVisita,
+          VISITA.dataHoraFimVisita        AS dataHoraFimVisita,
+          VISITA.objetivoDaVisita         AS objetivoDaVisita
+        FROM VisitaEntity VISITA
+        WHERE VISITA.dataHoraInicioVisita BETWEEN :inicio AND :fim
+    """)
+    List<VisitaSummary> visitaPaginator(@Param("inicio") String inicio, @Param("fim") String fim);
 }

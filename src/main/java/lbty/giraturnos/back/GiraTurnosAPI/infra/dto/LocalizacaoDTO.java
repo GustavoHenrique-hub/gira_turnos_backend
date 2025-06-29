@@ -14,7 +14,6 @@ public class LocalizacaoDTO {
 
     private Long id;
 
-    @NotBlank(message = "O campo 'Local' não pode ser vazio ou nulo!")
     private String local;
 
     public LocalizacaoDTO(LocalizacaoEntity localizacaoEntity){

@@ -12,10 +12,9 @@ public class UnidadeDTO {
 
     private Long id;
 
-    @NotBlank(message = "O campo 'Nome' não pode ser vazio ou nulo!")
+
     private String nome;
 
-    @NotBlank(message = "O campo 'Email da Unidade' não pode ser vazio ou nulo!")
     private String emailUnidade;
 
     public UnidadeDTO(UnidadeEntity unidadeEntity){

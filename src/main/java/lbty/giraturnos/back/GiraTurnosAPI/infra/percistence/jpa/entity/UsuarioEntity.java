@@ -21,15 +21,12 @@ public class UsuarioEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
     @Column(nullable = false)
     private String nome;
 
-    @NotBlank
     @Column(nullable = false)
     private String email;
 
-    @NotBlank
     @Column(nullable = false)
     private String senha;
 

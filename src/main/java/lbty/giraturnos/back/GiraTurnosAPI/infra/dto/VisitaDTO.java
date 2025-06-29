@@ -1,7 +1,9 @@
 package lbty.giraturnos.back.GiraTurnosAPI.infra.dto;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 
+import jakarta.validation.constraints.NotNull;
 import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity.VisitaEntity;
 import lombok.*;
 import org.springframework.beans.*;
@@ -13,33 +15,27 @@ public class VisitaDTO {
 
     private Long id;
 
-    @NotBlank(message = "O campo 'Tecnico' não pode ser vazio ou nulo!")
     private TecnicoDTO tecnico;
 
-    @NotBlank(message = "O campo 'Unidade' não pode ser vazio ou nulo!")
     private UnidadeDTO unidade;
 
-    @NotBlank(message = "O campo 'Localização' não pode ser vazio ou nulo!")
     private LocalizacaoDTO localizacao;
-    
-    @NotBlank(message = "O campo 'Turno' não pode ser vazio ou nulo!")
+
     private TurnoDTO turno;
 
-    @NotBlank(message = "O campo 'Escala' não pode ser vazio ou nulo!")
     private EscalaDTO escala;
 
     private UsuarioDTO resposavelRegistro;
 
-    @NotBlank(message = "O campo 'Data/Hora Inicio da Visita' não pode ser vazio ou nulo!")
     private String dataHoraInicioVisita;
 
-    @NotBlank(message = "O campo 'Data/Hora Fim da Visita' não pode ser vazio ou nulo!")
     private String dataHoraFimVisita;
 
-    @NotBlank(message = "O campo 'Objetivo da Visita' não pode ser vazio ou nulo!")
     private String objetivoDaVisita;
 
     private String dataHoraRegistro;
+
+    private String numCard;
 
     public VisitaDTO (VisitaEntity visitaEntity){
         BeanUtils.copyProperties(visitaEntity, this);
@@ -61,5 +57,9 @@ public class VisitaDTO {
         if(visitaEntity != null && visitaEntity.getEscala() != null){
             this.escala = new EscalaDTO(visitaEntity.getEscala());
         }
+    }
+
+    public void setNumCard(String numCard) {
+        this.numCard = numCard;
     }
 }

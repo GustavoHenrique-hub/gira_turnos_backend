@@ -15,7 +15,6 @@ public class EscalaDTO {
 
     private Long id;
 
-    @NotBlank(message = "O campo 'Descrição' não pode ser vazio ou nulo!")
     private String descricao;
 
     public EscalaDTO(EscalaEntity escalaEntity) {

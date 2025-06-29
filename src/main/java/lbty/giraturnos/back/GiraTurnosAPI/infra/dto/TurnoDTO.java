@@ -12,7 +12,6 @@ public class TurnoDTO {
 
     private Long id;
 
-    @NotBlank(message = "O campo 'Turno' não pode ser vazio ou nulo!")
     private String turno;
 
     public TurnoDTO (TurnoEntity turnoEntity){
