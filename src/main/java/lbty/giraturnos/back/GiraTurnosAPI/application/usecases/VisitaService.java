@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class VisitaService {
@@ -22,6 +23,11 @@ public class VisitaService {
     public List<VisitaDTO> listAll(){
         List<VisitaEntity> visita = visitaRepository.findAll();
         return visita.stream().map(VisitaDTO::new).toList();
+    }
+
+    public List<VisitaDTO> visitaPaginator (String inicio, String fim){
+        List<VisitaEntity> visitaEntityPaginator = visitaRepository.visitaPaginator(inicio, fim);
+        return visitaEntityPaginator.stream().map(VisitaDTO::new).collect(Collectors.toList());
     }
 
     public ResponseEntity<Map<String, String>> insertVisita(VisitaDTO visitaDTO){

@@ -3,6 +3,7 @@ package lbty.giraturnos.back.GiraTurnosAPI.infra.controller;
 import jakarta.validation.Valid;
 import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.VisitaDTO;
 import lbty.giraturnos.back.GiraTurnosAPI.application.usecases.VisitaService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,14 @@ public class VisitaController {
     @GetMapping("/listAllVisita")
     public List<VisitaDTO> listAll() {
         return visitaService.listAll();
+    }
+
+    @GetMapping("/visitaPaginator")
+    public ResponseEntity<List<VisitaDTO>> visitaPaginator(
+            @RequestParam(required = false) String inicio,
+            @RequestParam(required = false) String fim){
+        List<VisitaDTO> visitas = visitaService.visitaPaginator(inicio, fim);
+        return ResponseEntity.ok(visitas);
     }
 
     @PostMapping("/newVisita")
