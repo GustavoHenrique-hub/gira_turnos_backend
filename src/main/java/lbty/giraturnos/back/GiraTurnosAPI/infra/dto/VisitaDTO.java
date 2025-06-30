@@ -14,27 +14,16 @@ import org.springframework.beans.*;
 public class VisitaDTO {
 
     private Long id;
-
     private TecnicoDTO tecnico;
-
     private UnidadeDTO unidade;
-
     private LocalizacaoDTO localizacao;
-
     private TurnoDTO turno;
-
     private EscalaDTO escala;
-
     private UsuarioDTO resposavelRegistro;
-
     private String dataHoraInicioVisita;
-
     private String dataHoraFimVisita;
-
     private String objetivoDaVisita;
-
     private String dataHoraRegistro;
-
     private String numCard;
 
     public VisitaDTO (VisitaEntity visitaEntity){

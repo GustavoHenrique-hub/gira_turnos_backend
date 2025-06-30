@@ -38,6 +38,11 @@ public class VisitaController {
         return visitaService.insertVisita(visitaDTO);
     }
 
+    @PostMapping("/newVisitasLote")
+    public ResponseEntity<Map<String, String>> bulkInsertVisita(@Valid @RequestBody List<VisitaDTO> visitasDTO){
+        return visitaService.insertAllVisitas(visitasDTO);
+    }
+
     @PutMapping("/updateVisita/{id}")
     public ResponseEntity<Map<String, String>> updateVisita(@Valid @RequestBody VisitaDTO visitaDTO, @PathVariable Long id) {
         return visitaService.updateVisita(visitaDTO, id);
