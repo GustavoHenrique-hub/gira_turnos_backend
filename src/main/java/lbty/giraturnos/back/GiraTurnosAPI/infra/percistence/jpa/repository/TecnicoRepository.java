@@ -8,6 +8,10 @@ import java.util.List;
 
 public interface TecnicoRepository extends JpaRepository<TecnicoEntity, Long> {
 
-    @Query(value = "SELECT t.* FROM tecnico t ORDER BY t.nome", nativeQuery = true)
+    @Query(value =
+            "SELECT DISTINCT t.id, t.email, t.nome " +
+            "FROM tecnico t " +
+            "WHERE t.email <> 'EXPIRADO' " +
+            "ORDER BY t.nome", nativeQuery = true)
     List<TecnicoEntity> findAllOrderedByName();
 }
