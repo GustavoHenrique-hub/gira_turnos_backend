@@ -22,20 +22,5 @@ public class TurnoController {
     public List<TurnoDTO> listAll() {
         return turnoService.listAll();
     }
-
-    @PostMapping("/newTurno")
-    public ResponseEntity<Map<String, String>> insertTurno(@Valid @RequestBody TurnoDTO turnoDTO) {
-        return turnoService.insertTurno(turnoDTO);
-    }
-
-    @PutMapping("/updateTurno/{id}")
-    public ResponseEntity<Map<String, String>> updateTurno(@Valid @RequestBody TurnoDTO turnoDTO, @PathVariable Long id) {
-        return turnoService.updateTurno(turnoDTO, id);
-    }
-
-    @DeleteMapping("/deleteTurno/{id}")
-    public ResponseEntity<Map<String, String>> deleteTurno(@PathVariable Long id) {
-        return turnoService.deleteTurno(id);
-    }
 }
 

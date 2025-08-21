@@ -22,19 +22,4 @@ public class LocalizacaoController {
     public List<LocalizacaoDTO> listAll() {
         return localizacaoService.listAll();
     }
-
-    @PostMapping("/newLocalizacao")
-    public ResponseEntity<Map<String, String>> insertLocalizacao(@Valid @RequestBody LocalizacaoDTO localizacaoDTO) {
-        return localizacaoService.insertLocalizacao(localizacaoDTO);
-    }
-
-    @PutMapping("/updateLocalizacao/{id}")
-    public ResponseEntity<Map<String, String>> updateLocalizacao(@Valid @RequestBody LocalizacaoDTO localizacaoDTO, @PathVariable Long id) {
-        return localizacaoService.updateLocalizacao(localizacaoDTO, id);
-    }
-
-    @DeleteMapping("/deleteLocalizacao/{id}")
-    public ResponseEntity<Map<String, String>> deleteLocalizacao(@PathVariable Long id) {
-        return localizacaoService.deleteLocalizacao(id);
-    }
 }
