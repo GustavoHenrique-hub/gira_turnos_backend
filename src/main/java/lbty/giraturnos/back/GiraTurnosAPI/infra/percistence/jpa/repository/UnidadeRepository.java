@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface UnidadeRepository extends JpaRepository<UnidadeEntity, Long> {
 
-    @Query(value = "SELECT u.* FROM unidade u ORDER BY u.nome", nativeQuery = true)
+    @Query(value = "SELECT DISTINCT u.* FROM unidade u ORDER BY u.nome", nativeQuery = true)
     List<UnidadeEntity> findAllOrderedByName();
 }
