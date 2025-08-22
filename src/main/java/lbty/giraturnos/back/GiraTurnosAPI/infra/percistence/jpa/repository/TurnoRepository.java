@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface TurnoRepository extends JpaRepository<TurnoEntity, Long> {
 
-    @Query(value = "SELECT tr.* FROM turno tr ORDER BY l.local", nativeQuery = true)
+    @Query(value = "SELECT tr.* FROM turno tr ORDER BY tr.turno", nativeQuery = true)
     List<TurnoEntity> findAllOrderedByName();
 }
