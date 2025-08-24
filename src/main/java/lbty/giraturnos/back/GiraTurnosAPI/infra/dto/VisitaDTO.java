@@ -1,12 +1,10 @@
 package lbty.giraturnos.back.GiraTurnosAPI.infra.dto;
 
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
-
-import jakarta.validation.constraints.NotNull;
 import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity.VisitaEntity;
-import lombok.*;
-import org.springframework.beans.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.beans.BeanUtils;
 
 @Getter
 @Setter
@@ -19,7 +17,7 @@ public class VisitaDTO {
     private LocalizacaoDTO localizacao;
     private TurnoDTO turno;
     private EscalaDTO escala;
-    private UsuarioDTO resposavelRegistro;
+    private UsuarioDTO responsavelRegistro;
     private String dataHoraInicioVisita;
     private String dataHoraFimVisita;
     private String objetivoDaVisita;
@@ -40,8 +38,8 @@ public class VisitaDTO {
         if(visitaEntity != null && visitaEntity.getLocalizacao() != null){
             this.localizacao = new LocalizacaoDTO(visitaEntity.getLocalizacao());
         }
-        if(visitaEntity != null && visitaEntity.getResposavelRegistro() != null){
-            this.resposavelRegistro = new UsuarioDTO(visitaEntity.getResposavelRegistro());
+        if(visitaEntity != null && visitaEntity.getResponsavelRegistro() != null){
+            this.responsavelRegistro = new UsuarioDTO(visitaEntity.getResponsavelRegistro());
         }
         if(visitaEntity != null && visitaEntity.getEscala() != null){
             this.escala = new EscalaDTO(visitaEntity.getEscala());

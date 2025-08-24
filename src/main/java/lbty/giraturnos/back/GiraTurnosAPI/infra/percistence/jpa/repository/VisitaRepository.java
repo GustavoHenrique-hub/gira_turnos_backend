@@ -33,15 +33,17 @@ public interface VisitaRepository extends JpaRepository<VisitaEntity, Long> {
     );
 
     @Query("""
-        SELECT
-          VISITA.id                       AS id,
-          VISITA.unidade.nome             AS unidadeNome,
-          VISITA.tecnico.nome             AS tecnicoNome,
-          VISITA.dataHoraInicioVisita     AS dataHoraInicioVisita,
-          VISITA.dataHoraFimVisita        AS dataHoraFimVisita,
-          VISITA.objetivoDaVisita         AS objetivoDaVisita
-        FROM VisitaEntity VISITA
-        WHERE VISITA.dataHoraInicioVisita BETWEEN :inicio AND :fim
-    """)
+    SELECT
+      VISITA.id                          AS id,
+      VISITA.unidade.nome                AS unidadeNome,
+      VISITA.tecnico.nome                AS tecnicoNome,
+      VISITA.dataHoraInicioVisita        AS dataHoraInicioVisita,
+      VISITA.dataHoraFimVisita           AS dataHoraFimVisita,
+      VISITA.objetivoDaVisita            AS objetivoDaVisita,
+      VISITA.localizacao.id              AS localizacaoId,
+      VISITA.localizacao.local            AS localizacaoLocal
+    FROM VisitaEntity VISITA
+    WHERE VISITA.dataHoraInicioVisita BETWEEN :inicio AND :fim
+""")
     List<VisitaSummary> visitaPaginator(@Param("inicio") String inicio, @Param("fim") String fim);
 }

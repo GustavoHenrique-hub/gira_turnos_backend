@@ -7,4 +7,6 @@ public interface VisitaSummary {
     String getDataHoraInicioVisita();
     String getDataHoraFimVisita();
     String getObjetivoDaVisita();
+    Long   getLocalizacaoId();
+    String getLocalizacaoLocal();
 }

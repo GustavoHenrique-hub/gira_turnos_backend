@@ -2,13 +2,13 @@ package lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity;
 
 //PACKAGES
 
-import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.VisitaDTO;
-
-//LIBS
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
-import lombok.*;
-import org.springframework.beans.*;
+import lbty.giraturnos.back.GiraTurnosAPI.infra.dto.VisitaDTO;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.beans.BeanUtils;
 
 @Entity
 @Table(name = "visita")
@@ -40,7 +40,7 @@ public class VisitaEntity {
 
     @ManyToOne
     @JoinColumn(name = "id_usuario", nullable = false)
-    private UsuarioEntity resposavelRegistro;
+    private UsuarioEntity responsavelRegistro;
 
     @ManyToOne
     @JoinColumn(name = "id_escala", nullable = false)
@@ -83,8 +83,8 @@ public class VisitaEntity {
         if (visitaDTO != null && visitaDTO.getLocalizacao() != null) {
             this.localizacao = new LocalizacaoEntity(visitaDTO.getLocalizacao());
         }
-        if (visitaDTO != null && visitaDTO.getResposavelRegistro() != null) {
-            this.resposavelRegistro = new UsuarioEntity(visitaDTO.getResposavelRegistro());
+        if (visitaDTO != null && visitaDTO.getResponsavelRegistro() != null) {
+            this.responsavelRegistro = new UsuarioEntity(visitaDTO.getResponsavelRegistro());
         }
         if (visitaDTO != null && visitaDTO.getEscala() != null) {
             this.escala = new EscalaEntity(visitaDTO.getEscala());
