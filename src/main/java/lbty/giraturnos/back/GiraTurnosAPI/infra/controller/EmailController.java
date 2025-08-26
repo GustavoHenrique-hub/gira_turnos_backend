@@ -7,8 +7,8 @@ import com.sendgrid.SendGrid;
 import com.sendgrid.helpers.mail.Mail;
 import com.sendgrid.helpers.mail.objects.Content;
 import com.sendgrid.helpers.mail.objects.Email;
-import io.github.cdimascio.dotenv.Dotenv;
 import lbty.giraturnos.back.GiraTurnosAPI.infra.percistence.jpa.entity.EmailEntity;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,13 +21,12 @@ import java.util.Map;
 @RequestMapping("/email")
 @CrossOrigin(origins = "http://localhost:5173/")
 public class EmailController {
+
+    @Value("${SENDGRID_API_KEY}")
+    private String apiKey;
+
     @PostMapping("/send")
     public ResponseEntity<Map<String, String>> sendEmail(@RequestBody EmailEntity emailRequest) {
-        // Defina sua chave da API do SendGrid
-        Dotenv dotenv = Dotenv.configure().directory(".").load();
-        String sendGridApiKey = dotenv.get("SENDGRID_API_KEY"); // Substitua pela sua chave real da API
-
-
 
         // Cria os objetos de e-mail
         Email from = new Email("operacoes@libertyti.com.br"); // Defina o seu e-mail de envio
@@ -36,7 +35,7 @@ public class EmailController {
         Mail mail = new Mail(from, emailRequest.getSubject(), to, content);
 
         // Cria a instância do SendGrid
-        SendGrid sg = new SendGrid(sendGridApiKey);
+        SendGrid sg = new SendGrid(apiKey);
         Request request = new Request();
 
         Map<String, String> responseMessage = new HashMap<>();
