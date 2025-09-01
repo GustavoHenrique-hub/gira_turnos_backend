@@ -22,7 +22,7 @@ import java.util.Map;
 @CrossOrigin(origins = "http://localhost:5173/")
 public class EmailController {
 
-    @Value("${SENDGRID_API_KEY}")
+    @Value("${SEND_GRID_APIKEY}")
     private String apiKey;
 
     @PostMapping("/send")
