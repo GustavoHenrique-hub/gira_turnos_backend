@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: GiraTurnosAPI
+
+  datasource:
+    url:
+    username:
+    password:
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+
+  properties:
+    hibernate:
+      jdbc:
+        lob:
+          non_contextual_creation: true
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: update
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+      type:
+        descriptor:
+          sql:
+            BasicBinder: TRACE
+
+SEND_GRID_APIKEY:
+
+## Conexão banco
+## spring.datasource.url=jdbc:postgresql://dpg-cv8tid7noe9s73cavmq0-a.oregon-postgres.render.com:5432/giraturnos?user=gustavo_silva_admin&password=O1kGQSZjG8YQt4HhS5qBSsGHYWLK2SLg&useSSL=false&allowPublicKeyRetrieval=true
+
+
