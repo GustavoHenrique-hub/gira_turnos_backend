@@ -47,12 +47,6 @@ Como criar as variáveis (passo a passo):
 
 Observações:
 - Ajuste os valores conforme o seu ambiente (host, porta, nome do banco, usuário e senha).
-- Se preferir executar pela linha de comando, exporte as variáveis no terminal (Linux/Mac):
-  export SEND_GRID_APIKEY="sua_chave"
-  export SPRING_DATASOURCE_URL="jdbc:postgresql://localhost:5432/giraturnos"
-  export SPRING_DATASOURCE_USERNAME="seu_usuario"
-  export SPRING_DATASOURCE_PASSWORD="sua_senha"
-  (ou adapte os nomes conforme a forma como a aplicação lê as variáveis — se a aplicação espera spring.datasource.url diretamente, use esse nome.)
 
 Passo 4 — Criar a database no pgAdmin
 ------------------------------------
@@ -64,7 +58,6 @@ Passo 4 — Criar a database no pgAdmin
 4. Salve. A database "giraturnos" deve aparecer na lista.
 
 Alternativa via psql (terminal):
-- Caso prefira, no terminal/psql execute:
   createdb -U <seu_usuario> -h localhost giraturnos
   (ou use: psql -U <seu_usuario> -c "CREATE DATABASE giraturnos;")
 
@@ -76,20 +69,17 @@ Existem duas formas comuns:
 - Com as variáveis de ambiente configuradas na Run Configuration, clique em Run (play). A aplicação Spring Boot iniciará.
 
 2) Pela linha de comando
-- Se o projeto usa Maven wrapper:
-  ./mvnw spring-boot:run
-  ou, no Windows:
-  mvnw.cmd spring-boot:run
-- Se preferir, gere o jar e execute:
-  ./mvnw package
-  java -jar target/<nome-do-jar>.jar
+- ./mvnw spring-boot:run ou, no Windows: mvnw.cmd spring-boot:run
+- Se preferir, gere o jar e execute: ./mvnw package java -jar target/giraturnos_backend.jar
 
 Verificação
 -----------
 - Verifique os logs da aplicação para confirmar que:
   - Conexão com o PostgreSQL foi estabelecida (sem erros de autenticação).
   - A aplicação iniciou e está escutando em uma porta (ex.: 8080).
-- Acesse endpoints conhecidos (por exemplo, http://localhost:8080/health ou a raiz da API) para confirmar que está funcionando.
+- Acesse endpoints conhecidos para confirmar que está funcionando:
+  - GET http://localhost:8080/tecnico/listAllTecnico
+  - GET http://localhost:8080/visita/listAllVisita  
 
 Dicas e resolução de problemas
 ------------------------------
@@ -97,7 +87,7 @@ Dicas e resolução de problemas
   - Verifique spring.datasource.url, username e password.
   - Confirme que o servidor PostgreSQL está em execução e que a porta (por padrão 5432) está correta.
 - Variáveis não sendo lidas:
-  - Confirme o nome exato esperado pela aplicação (spring.datasource.url vs SPRING_DATASOURCE_URL).
+  - Confirme o nome exato esperado pela aplicação (spring.datasource.url <> SPRING_DATASOURCE_URL).
   - No IntelliJ, verifique se a Run Configuration selecionada é a que você editou.
 - Porta em uso:
   - Mude a porta via propriedade (ex.: --server.port=8081) ou no application.properties/application.yml.
