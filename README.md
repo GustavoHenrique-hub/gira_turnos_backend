@@ -1,4 +1,4 @@
-# gira_turnos_backend — Como rodar localmente
+# GiraTurnos BackEnd — Como rodar localmente
 
 Este guia mostra, passo a passo, como executar o projeto gira_turnos_backend na sua máquina local. Ele segue o fluxo que você indicou: instalar dependências, clonar o repositório, configurar variáveis de ambiente em runtime (no IDE) e criar a database no pgAdmin.
 
